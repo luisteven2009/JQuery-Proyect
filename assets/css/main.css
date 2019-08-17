@@ -820,6 +820,12 @@ ul.icons {
     padding-left: 0;
     margin-top: -0.675em;
 }
+ul.icons li a img{
+    opacity: 0.6;
+}
+#m1{
+    opacity: 0.6;
+}
 
 ul.icons li {
     display: inline-block;
@@ -833,58 +839,10 @@ ul.icons li a {
     width: 3.75em;
     height: 3.75em;
     border-radius: 100%;
-    border: solid 1px #c8cccf;
     line-height: 3.75em;
     overflow: hidden;
     text-align: center;
-    text-indent: 3.75em;
     white-space: nowrap;
-}
-
-ul.icons li a:before {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    line-height: 1;
-    text-transform: none !important;
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 400;
-}
-
-ul.icons li a:before {
-    color: #ffffff;
-    text-shadow: 1.25px 0px 0px #c8cccf, -1.25px 0px 0px #c8cccf, 0px 1.25px 0px #c8cccf, 0px -1.25px 0px #c8cccf;
-}
-
-ul.icons li a:hover:before {
-    text-shadow: 1.25px 0px 0px #ff7496, -1.25px 0px 0px #ff7496, 0px 1.25px 0px #ff7496, 0px -1.25px 0px #ff7496;
-}
-
-ul.icons li a:before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: inherit;
-    height: inherit;
-    font-size: 1.85rem;
-    line-height: inherit;
-    text-align: center;
-    text-indent: 0;
-}
-
-ul.icons li a:hover {
-    border-color: #ff7496;
-}
-
-@media screen and (max-width: 480px) {
-
-    ul.icons li a:before {
-        font-size: 1.5rem;
-    }
-
 }
 
 /* Button */

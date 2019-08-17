@@ -1,107 +1,114 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Pastoral social San Antonio de Padua</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/form.css">
-		<script type="text/javascript" src="js/form.js"></script>
-		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-		<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-	</head>
-	<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<head>
+    <title>Pastoral social San Antonio de Padua</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/form.css">
+    <script type="text/javascript" src="js/form.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
 
-				<!-- Main -->
-					<section id="main">
-						<header>
-							<span class="avatar"><img src="images/avatar.jpeg" alt="" /></span>
-							<h1 id="tx">Pastoral Social</h1>
-							<p id="tx">San Antonio De Padua</p>
-						</header>
-						<footer>
-							<ul class="icons">
-								<li><a href="#" class="icon brands fa-twitter">Twitter</a></li>
-								<li><a href="#" class="icon brands fa-twitter">Twitter</a></li>
-								<li><a class="fa fa-info-circle sform"></a></li>
-								<li><a href="https://www.facebook.com/Pastoral-Social-San-Antonio-de-Escaz%C3%BA-2058577997704208/" class="icon brands fa-facebook-f" target="_blank">Facebook</a></li>
-							</ul>
-						</footer>
-					</section>
+<body class="is-preload">
 
-				<!-- Footer -->
-					<footer id="footer">
-						
-					</footer>
+    <!-- Wrapper -->
+    <div id="wrapper">
 
-					<!--Script para ejecutar el pop-up del formulario-->
-					<script>
-						$(document).ready(function(){
-							$(".sform").click(function(){
-								$(".bg-modal").slideDown("slow");
-							});
-							$(".close").click(function(){
-								$(".bg-modal").hide("slow");
-							});
-						});
-					</script>
-			</div>
-			<!--Pop-up para formulario-->
-			<div class="bg-modal">
-				<div class="modal-content">
-					<div class="close">+</div>
-					<img src="images/form.png" class="sIcons" alt="">
-						<hr />
-						<h2>Extra Stuff!</h2>
-						<form method="post" action="#">
-							<div class="fields">
-								<div class="field">
-									<input type="text" name="name" id="name" placeholder="Name" />
-								</div>
-								<div class="field">
-									<input type="email" name="email" id="email" placeholder="Email" />
-								</div>
-								<div class="field">
-									<select name="department" id="department">
-										<option value="">Department</option>
-										<option value="sales">Sales</option>
-										<option value="tech">Tech Support</option>
-										<option value="null">/dev/null</option>
-									</select>
-								</div>
-								<div class="field">
-									<textarea name="message" id="message" placeholder="Message" rows="4"></textarea>
-								</div>
-								<div class="field">
-									<input type="checkbox" id="human" name="human" /><label for="human">I'm a human</label>
-								</div>
-								<div class="field">
-									<label>But are you a robot?</label>
-									<input type="radio" id="robot_yes" name="robot" /><label for="robot_yes">Yes</label>
-									<input type="radio" id="robot_no" name="robot" /><label for="robot_no">No</label>
-								</div>
-							</div>
-							<ul class="actions special">
-								<li><a href="#" class="button">Get Started</a></li>
-							</ul>
-						</form>
-						<hr />
-				</div>
+        <!-- Main -->
+        <section id="main">
+            <header>
+                <span class="avatar"><img src="images/avatar.jpeg" alt="" /></span>
+                <h1 id="tx">Pastoral Social</h1>
+                <p id="tx">San Antonio De Padua</p>
+            </header>
+            <footer>
+                <ul class="icons">
+                    <li><a href="https://www.facebook.com/Pastoral-Social-San-Antonio-de-Escaz%C3%BA-2058577997704208/"><img src="images/f.jpg" height="55" width="55"></a></li>
+                    <li><a href="#"><img src="images/i.png"height="57" width="57"></a></li>
+                    <li><img src="images/form.png" height="65" width="65" class="formulario" id="m1"></li>
+                    <li><a href="#"><img src="images/g.jpg"height="55" width="55"></a></li>
+                </ul>
+            </footer>
+        </section>
 
-			</div>
+        <!-- Footer -->
+        <footer id="footer">
 
-		<!-- Scripts -->
-			<script>
-				if ('addEventListener' in window) {
-					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
-					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
-				}
-			</script>
+        </footer>
 
-	</body>
+        <!--Script para ejecutar el pop-up del formulario-->
+        <script>
+            $(document).ready(function() {
+                $(".formulario").click(function() {
+                    $(".bg-modal").slideDown("slow");
+                });
+                $(".close").click(function() {
+                    $(".bg-modal").hide("slow");
+                });
+            });
+
+        </script>
+    </div>
+    <!--Pop-up para formulario-->
+    <div class="bg-modal">
+        <div class="modal-content">
+            <div class="close">+</div>
+            <img src="images/form.png" class="sIcons" alt="">
+            <hr />
+            <h2>Extra Stuff!</h2>
+            <form method="post" action="#">
+                <div class="fields">
+                    <div class="field">
+                        <input type="text" name="name" id="name" placeholder="Name" />
+                    </div>
+                    <div class="field">
+                        <input type="email" name="email" id="email" placeholder="Email" />
+                    </div>
+                    <div class="field">
+                        <select name="department" id="department">
+                            <option value="">Department</option>
+                            <option value="sales">Sales</option>
+                            <option value="tech">Tech Support</option>
+                            <option value="null">/dev/null</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <textarea name="message" id="message" placeholder="Message" rows="4"></textarea>
+                    </div>
+                    <div class="field">
+                        <input type="checkbox" id="human" name="human" /><label for="human">I'm a human</label>
+                    </div>
+                    <div class="field">
+                        <label>But are you a robot?</label>
+                        <input type="radio" id="robot_yes" name="robot" /><label for="robot_yes">Yes</label>
+                        <input type="radio" id="robot_no" name="robot" /><label for="robot_no">No</label>
+                    </div>
+                </div>
+                <ul class="actions special">
+                    <li><a href="#" class="button">Get Started</a></li>
+                </ul>
+            </form>
+            <hr />
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        if ('addEventListener' in window) {
+            window.addEventListener('load', function() {
+                document.body.className = document.body.className.replace(/\bis-preload\b/, '');
+            });
+            document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+        }
+
+    </script>
+
+</body>
+
 </html>
