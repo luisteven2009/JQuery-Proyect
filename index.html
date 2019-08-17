@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/form.css">
-		
+		<script type="text/javascript" src="js/form.js"></script>
 		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 		<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -38,18 +38,18 @@
 					<footer id="footer">
 						
 					</footer>
-			
-			<!--Script para ejecutar el pop-up del formulario-->
-			<script>
-				$(document).ready(function(){
-					$(".sform").click(function(){
-						$(".bg-modal").slideDown("slow");
-					});
-					$(".close").click(function(){
-						$(".bg-modal").hide("slow");
-					});
-				});
-			</script>
+
+					<!--Script para ejecutar el pop-up del formulario-->
+					<script>
+						$(document).ready(function(){
+							$(".sform").click(function(){
+								$(".bg-modal").slideDown("slow");
+							});
+							$(".close").click(function(){
+								$(".bg-modal").hide("slow");
+							});
+						});
+					</script>
 			</div>
 			<!--Pop-up para formulario-->
 			<div class="bg-modal">
