@@ -55,7 +55,7 @@ $(function() {
 		if(pattern.test($("#form_email").val())) {
 			$("#email_error_message").hide();
 		} else {
-			$("#email_error_message").html("Dirección de correo invalido");
+			$("#email_error_message").html("Dirección de correo invalida");
 			$("#email_error_message").show();
 			error_email = true;
 		}
