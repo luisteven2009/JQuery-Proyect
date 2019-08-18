@@ -29,7 +29,7 @@
             <footer>
                 <ul class="icons">
                     <li><a href="https://www.facebook.com/Pastoral-Social-San-Antonio-de-Escaz%C3%BA-2058577997704208/" target="_blank"><img src="images/f.jpg" height="55" width="55" ></a></li>
-                    <li><a herf="#"><img src="images/i.png"height="57" width="57"></a></li>
+                    <li><a herf="#"><img class="informacion" src="images/i.png"height="57" width="57"></a></li>
                     <li><img src="images/form.png" height="65" width="65" class="formulario" id="m1"></li>
                     <li><a href="galeria.html"><img src="images/g.jpg"height="55" width="55"></a></li>
                 </ul>
@@ -51,12 +51,19 @@
                     $(".bg-modal").slideUp("slow");
                 });
 			});
+
+			$(document).ready(function() {
+                $(".informacion").click(function() {
+                    $(".bg-modal2").slideDown("slow");
+                });
+                $(".close").click(function() {
+                    $(".bg-modal2").slideUp("slow");
+                });
+			});
 			
 			$(function() {
 
 			$("#username_error_message").hide();
-			$("#password_error_message").hide();
-			$("#retype_password_error_message").hide();
 			$("#email_error_message").hide();
 
 			var error_username = false;
@@ -67,18 +74,6 @@
 			$("#form_username").focusout(function() {
 
 				check_username();
-				
-			});
-
-			$("#form_password").focusout(function() {
-
-				check_password();
-				
-			});
-
-			$("#form_retype_password").focusout(function() {
-
-				check_retype_password();
 				
 			});
 
@@ -139,7 +134,22 @@
 			});
 
         </script>
-    </div>
+	</div>
+	<!--Pop-up informacion-->
+	<div class="bg-modal2">
+			<div class="modal-content2">
+				<div class="close">+</div>
+				<img src="images/i.png" class="sIcons" alt="">
+				<hr/>
+				<h2>Sobre nosotros</h2>
+				<h3>Informacion de contacto</h3>
+				<span>Parroquia: 2288 1878 Ext 106 | Numero alternativo: 2289 6592 | pastsoc.sapadua.escazu@gmail.com</span>
+				<hr/>
+				<p>MISIÓN:  La Pastoral Social de San Antonio de Padua-Escazú; de la diócesis de San José, promueve apoya, acompaña y forma, a personas, comunidades por medio de    procesos, estrategias y programas sociales,  orientados a través de la promoción humana, la acción caritativa y solidaria, la vida, la justicia y la paz; aportando  al desarrollo Humano-Cristiano de la Región.</p>
+				<p>VISIÓN: Ser reconocidos por nuestra capacidad de dinamizar, direccionar y transformar  la realidad de nuestra región, hacia una cultura del bien común y la solidaridad; donde sus pobladores gozan de  vida más digna </p>
+			</div>
+		</div>
+
     <!--Pop-up para formulario-->
     <div class="bg-modal">
         <div class="modal-content">

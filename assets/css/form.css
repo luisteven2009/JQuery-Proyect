@@ -1,4 +1,4 @@
-.bg-modal{
+.bg-modal, .bg-modal2{
     width: 100%;
     height: auto;
     background-color:rgba(0, 0, 0, 0.7);
@@ -10,7 +10,7 @@
     display: none;
 }
 
-.modal-content{
+.modal-content, .modal-content2{
     width: 850px;
     height: auto;
     background-color: white;
