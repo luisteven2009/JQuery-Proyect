@@ -32,7 +32,7 @@
                     <li><a herf="#"><img class="informacion" src="images/i.png"height="57" width="57"></a></li>
                     <li><img src="images/form.png" height="65" width="65" class="formulario" id="m1"></li>
                     <li><a href="galeria.html"><img src="images/g.jpg"height="55" width="55"></a></li>
-                    <li><a href="#"><img src="images/pry.png"height="55" width="55"></a></li>
+                    <li><a href="#"><img class="social" src="images/pry.png"height="55" width="55"></a></li>
                     
                 </ul>
             </footer>
@@ -60,6 +60,15 @@
                 });
                 $(".close").click(function() {
                     $(".bg-modal2").slideUp("slow");
+                });
+			});
+
+			$(document).ready(function() {
+                $(".social").click(function() {
+                    $(".bg-modal3").slideDown("slow");
+                });
+                $(".close").click(function() {
+                    $(".bg-modal3").slideUp("slow");
                 });
 			});
 			
@@ -170,7 +179,52 @@
             <hr />
         </div>
 
-    </div>
+	</div>
+	
+	<!--Pop-up de informacion sobre cursos y ayuda social-->
+	<div class="bg-modal3">
+			<div class="modal-content3">
+				<div class="close">+</div>
+				<img src="images/pry.png" class="sIcons" alt="">
+				<hr/>
+				<h2>Programas sociales</h2>
+				<hr/>
+				<h3>Atención Psicológica</h3>
+				<p>Es por ello que se ha desarrollado el proyecto de atención psicológica, ya que muchas
+				personas no solamente carecen de bienes materiales sino de recursos y bienes
+				emocionales y espirituales, y es tanta responsabilidad de la sociedad como de la Iglesia
+				brindar una respuesta.</p>
+				<p>En esa línea desde que se inició el proceso se ha contado con el aporte de una
+				profesional en el área de psicología que realiza un servicio comunal en el cual no cobra la
+				tarifa estipulada por el Colegio Profesional de Psicólogos de Costa Rica, que plantea que
+				el costo de las sesiones.</p>
+				<p>No obstante, en la comunidad de recibe en el mejor de los casos 15.000 colones para
+				atención individual. Asimismo, por ser coordinada por la Pastoral Social, las personas que
+				no cuentan con los recursos para sufragar dicha inversión no pagan tal suma y la atención
+				es gratuita.</p>
+				<p>De tal forma tanto los beneficiarios directos de la Pastoral Social, así como los feligreses
+				que son beneficiarios indirectos reciben una atención más cómoda.</p>
+				<hr>
+				<h3>Cursos de Manipulación de Alimentos</h3>
+				<p>Aparecida 399 nos dice que todo proceso evangelizador implica la promoción humana y la
+				auténtica liberación, sin la cual no es posible un orden justo de la sociedad. Entendiendo,
+				además que la verdadera promoción humana no puede reducirse a aspectos particulares:
+				“debe ser integral, es decir, promover a todos los hombres y a todo el hombre desde la
+				vida nueva en Cristo que transforma en tal manera que lo hace sujeto de su propio
+				desarrollo”.</p>
+				<p>Tomando en cuenta estas orientaciones de los obispos, se busca el desarrollo de
+				habilidades en las personas de la comunidad, que les brinden herramientas tanto al
+				servicio de la parroquia como en su propio crecimiento. De esa manera, se ha establecido
+				el programa de los cursos de manipulación de alimentos en la parroquia.</p>
+				<p>Tales cursos son impartidos por un profesional en Tecnología de Alimentos, debidamente
+				acreditado ante el Instituto Nacional de Aprendizaje (INA) bajo resolución de consejo
+				0802-3 y registrado ante el Colegio de Ingenieros Químicos y profesionales Afines, que es
+				un feligrés de la comunidad, de una de las familias de más trayectoria en la comunidad.
+				En algunos casos, deben adecuarse a personas adultas mayores, con baja escolaridad o
+				dificultades de aprendizaje y fieles servidoras de la parroquia en los diversos turnos y
+				actividades donde se involucra la preparación y manejo de alimentos.</p>
+			</div>
+		</div>
 
     <!-- Scripts -->
     <script>
