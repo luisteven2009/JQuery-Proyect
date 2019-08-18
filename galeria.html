@@ -14,6 +14,9 @@
 </head>
 
 <body class="is-preload">
+    <div>
+        <a href="index.html"><img src="images/fle.png" id="fle" height="65" width="65" ></a>
+    </div>
 
     <!-- Wrapper -->
     <div id="wrapper">
@@ -25,65 +28,9 @@
                 <h1 id="tx">Pastoral Social</h1>
                 <p id="tx">San Antonio De Padua</p>
             </header>
-            <footer>
-                <ul class="icons">
-                    <li><a href="https://www.facebook.com/Pastoral-Social-San-Antonio-de-Escaz%C3%BA-2058577997704208/" target="_blank"><img src="images/f.jpg" height="55" width="55" ></a></li>
-                    <li><a href="#"><img src="images/i.png"height="57" width="57"></a></li>
-                    <li><img src="images/form.png" height="65" width="65" class="formulario" id="m1"></li>
-                    <li><a href="#"><img src="images/g.jpg"height="55" width="55"></a></li>
-                </ul>
-            </footer>
         </section>
 
-        <!-- Footer -->
-        <footer id="footer">
-
-        </footer>
-
-        <!--Script para ejecutar el pop-up del formulario-->
-        <script>
-            $(document).ready(function() {
-                $(".formulario").click(function() {
-                    $(".bg-modal").slideDown("slow");
-                });
-                $(".close").click(function() {
-                    $(".bg-modal").slideUp("slow");
-                });
-            });
-
-        </script>
     </div>
-    <!--Pop-up para formulario-->
-    <div class="bg-modal">
-        <div class="modal-content">
-            <div class="close">+</div>
-            <img src="images/form.png" class="sIcons" alt="">
-            <hr />
-            <h2>Extra Stuff!</h2>
-            <form id=registration_form action="register.php" method="post">
-					<table>
-					<tr><td><input type="text" class="form_text" placeholder="Nombre" id="form_username"></td><td><span class="error_form" id="username_error_message"></span></td></tr>
-					<tr><td><input placeholder="Correo electronico" type="text" class="form_text" id="form_email"></td><td><span class="error_form" id="email_error_message"></span></td></tr>
-					<tr><td><textarea name="razon" id="message" placeholder="¿Por qué necesitas ayuda?" cols="10" rows="5" class="form_text" id="form_razon"></textarea></td><td><span class="error_form" id="username_error_message"></span></td></tr>
-					<tr><td><input type="submit" class="sbmt_btn" value="Create Account"></td><td></td></tr>
-					</table>
-				</form>
-            <hr />
-        </div>
-
-    </div>
-
-    <!-- Scripts -->
-    <script>
-        if ('addEventListener' in window) {
-            window.addEventListener('load', function() {
-                document.body.className = document.body.className.replace(/\bis-preload\b/, '');
-            });
-            document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
-        }
-
-    </script>
-
 </body>
 
 </html>
