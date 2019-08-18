@@ -11,7 +11,7 @@
 }
 
 .modal-content{
-    width: 800px;
+    width: 850px;
     height: auto;
     background-color: white;
     border-radius: 4px;
@@ -41,6 +41,6 @@ form{
 }
 
 input, textarea{
-    width:300px;
-    margin: 5px;
+    width:360px;
+    margin-top: 20px;
 }

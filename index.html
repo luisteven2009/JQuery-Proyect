@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/form.css">
-    <script type="text/javascript" src="js/form.js"></script>
+	<script type="text/javascript" src="js/form.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <noscript>
@@ -49,7 +50,93 @@
                 $(".close").click(function() {
                     $(".bg-modal").slideUp("slow");
                 });
-            });
+			});
+			
+			$(function() {
+
+			$("#username_error_message").hide();
+			$("#password_error_message").hide();
+			$("#retype_password_error_message").hide();
+			$("#email_error_message").hide();
+
+			var error_username = false;
+			var error_password = false;
+			var error_retype_password = false;
+			var error_email = false;
+
+			$("#form_username").focusout(function() {
+
+				check_username();
+				
+			});
+
+			$("#form_password").focusout(function() {
+
+				check_password();
+				
+			});
+
+			$("#form_retype_password").focusout(function() {
+
+				check_retype_password();
+				
+			});
+
+			$("#form_email").focusout(function() {
+
+				check_email();
+				
+			});
+
+			function check_username() {
+
+				var username_length = $("#form_username").val().length;
+				
+				if(username_length < 5 || username_length > 20) {
+					$("#username_error_message").html("Deberia ser entre 5 y 20 caracteres");
+					$("#username_error_message").show();
+					error_username = true;
+				} else {
+					$("#username_error_message").hide();
+				}
+
+			}
+
+			function check_email() {
+
+				var pattern = new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
+
+				if(pattern.test($("#form_email").val())) {
+					$("#email_error_message").hide();
+				} else {
+					$("#email_error_message").html("Dirección de correo invalida");
+					$("#email_error_message").show();
+					error_email = true;
+				}
+
+			}
+
+			$("#registration_form").submit(function() {
+													
+				error_username = false;
+				error_password = false;
+				error_retype_password = false;
+				error_email = false;
+													
+				check_username();
+				check_password();
+				check_retype_password();
+				check_email();
+				
+				if(error_username == false && error_password == false && error_retype_password == false && error_email == false) {
+					return true;
+				} else {
+					return false;	
+				}
+
+			});
+
+			});
 
         </script>
     </div>
@@ -59,13 +146,13 @@
             <div class="close">+</div>
             <img src="images/form.png" class="sIcons" alt="">
             <hr />
-            <h2>Extra Stuff!</h2>
+            <h2>Proporciona tus datos para solicitar ayuda</h2>
             <form id=registration_form action="register.php" method="post">
 					<table>
 					<tr><td><input type="text" class="form_text" placeholder="Nombre" id="form_username"></td><td><span class="error_form" id="username_error_message"></span></td></tr>
 					<tr><td><input placeholder="Correo electronico" type="text" class="form_text" id="form_email"></td><td><span class="error_form" id="email_error_message"></span></td></tr>
 					<tr><td><textarea name="razon" id="message" placeholder="¿Por qué necesitas ayuda?" cols="10" rows="5" class="form_text" id="form_razon"></textarea></td><td><span class="error_form" id="username_error_message"></span></td></tr>
-					<tr><td><input type="submit" class="sbmt_btn" value="Create Account"></td><td></td></tr>
+					<tr><td><input type="submit" class="sbmt_btn" value="Enviar formulario"></td><td></td></tr>
 					</table>
 				</form>
             <hr />
