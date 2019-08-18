@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/form.css">
-    <script type="text/javascript" src="js/form.js"></script>
-    <script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/form.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <noscript>
@@ -26,15 +26,16 @@
                 <h1 id="tx">Pastoral Social</h1>
                 <p id="tx">San Antonio De Padua</p>
             </header>
-            <ul class="icons">
-                <li><a href="https://www.facebook.com/Pastoral-Social-San-Antonio-de-Escaz%C3%BA-2058577997704208/" target="_blank"><img src="images/f.jpg" height="55" width="55"></a></li>
-                <li><a herf="#"><img class="informacion" src="images/i.png" height="57" width="57"></a></li>
-                <li><img src="images/form.png" height="65" width="65" class="formulario" id="m1"></li>
-                <li><a href="galeria.html"><img src="images/g.jpg" height="55" width="55"></a></li>
-                <li><a href="#"><img src="images/pry.png" height="55" width="55"></a></li>
-            </ul>
+                <ul class="icons">
+                    <li><a href="https://www.facebook.com/Pastoral-Social-San-Antonio-de-Escaz%C3%BA-2058577997704208/" target="_blank"><img src="images/f.jpg" height="55" width="55" ></a></li>
+                    <li><a herf="#"><img class="informacion" src="images/i.png"height="57" width="57"></a></li>
+                    <li><img src="images/form.png" height="65" width="65" class="formulario" id="m1"></li>
+                    <li><a href="galeria.html"><img src="images/g.jpg"height="55" width="55"></a></li>
+                    <li><a href="#"><img class="social" src="images/pry.png"height="55" width="55"></a></li>
+                    
+                </ul>
         </section>
-        <!--Script para ejecutar el pop-up del formulario-->
+        <!--Script para ejecutar los pop-ups del formulario-->
         <script>
             $(document).ready(function() {
                 $(".formulario").click(function() {
@@ -43,105 +44,116 @@
                 $(".close").click(function() {
                     $(".bg-modal").slideUp("slow");
                 });
-            });
+			});
 
-            $(document).ready(function() {
+			$(document).ready(function() {
                 $(".informacion").click(function() {
                     $(".bg-modal2").slideDown("slow");
                 });
                 $(".close").click(function() {
                     $(".bg-modal2").slideUp("slow");
                 });
-            });
+			});
 
-            $(function() {
-
-                $("#username_error_message").hide();
-                $("#email_error_message").hide();
-
-                var error_username = false;
-                var error_password = false;
-                var error_retype_password = false;
-                var error_email = false;
-
-                $("#form_username").focusout(function() {
-
-                    check_username();
-
+			$(document).ready(function() {
+                $(".social").click(function() {
+                    $(".bg-modal3").slideDown("slow");
                 });
-
-                $("#form_email").focusout(function() {
-
-                    check_email();
-
+                $(".close").click(function() {
+                    $(".bg-modal3").slideUp("slow");
                 });
+			});
+			
+			//Inicio de validacion en tiempo real del formulario
+			$(function() {
 
-                function check_username() {
+			$("#username_error_message").hide();
+			$("#email_error_message").hide();
 
-                    var username_length = $("#form_username").val().length;
+			var error_username = false;
+			var error_password = false;
+			var error_retype_password = false;
+			var error_email = false;
 
-                    if (username_length < 5 || username_length > 20) {
-                        $("#username_error_message").html("Deberia ser entre 5 y 20 caracteres");
-                        $("#username_error_message").show();
-                        error_username = true;
-                    } else {
-                        $("#username_error_message").hide();
-                    }
+			$("#form_username").focusout(function() {
 
-                }
+				check_username();
+				
+			});
 
-                function check_email() {
+			$("#form_email").focusout(function() {
 
-                    var pattern = new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
+				check_email();
+				
+			});
 
-                    if (pattern.test($("#form_email").val())) {
-                        $("#email_error_message").hide();
-                    } else {
-                        $("#email_error_message").html("Dirección de correo invalida");
-                        $("#email_error_message").show();
-                        error_email = true;
-                    }
+			function check_username() {
 
-                }
+				var username_length = $("#form_username").val().length;
+				
+				if(username_length < 5 || username_length > 20) {
+					$("#username_error_message").html("Deberia ser entre 5 y 20 caracteres");
+					$("#username_error_message").show();
+					error_username = true;
+				} else {
+					$("#username_error_message").hide();
+				}
 
-                $("#registration_form").submit(function() {
+			}
 
-                    error_username = false;
-                    error_password = false;
-                    error_retype_password = false;
-                    error_email = false;
+			function check_email() {
 
-                    check_username();
-                    check_password();
-                    check_retype_password();
-                    check_email();
+				var pattern = new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
 
-                    if (error_username == false && error_password == false && error_retype_password == false && error_email == false) {
-                        return true;
-                    } else {
-                        return false;
-                    }
+				if(pattern.test($("#form_email").val())) {
+					$("#email_error_message").hide();
+				} else {
+					$("#email_error_message").html("Dirección de correo invalida");
+					$("#email_error_message").show();
+					error_email = true;
+				}
 
-                });
+			}
 
-            });
+			$("#registration_form").submit(function() {
+													
+				error_username = false;
+				error_password = false;
+				error_retype_password = false;
+				error_email = false;
+													
+				check_username();
+				check_password();
+				check_retype_password();
+				check_email();
+				
+				if(error_username == false && error_password == false && error_retype_password == false && error_email == false) {
+					return true;
+				} else {
+					return false;	
+				}
 
+			});
+
+			});
+			//fin de validacion del formulario
+			//**el codigo fue introducido en el html por un error desconocido que hacia que no funcionara en un archivo externo
         </script>
-    </div>
-    <!--Pop-up informacion-->
-    <div class="bg-modal2">
-        <div class="modal-content2">
-            <div class="close">+</div>
-            <img src="images/i.png" class="sIcons" alt="">
-            <hr />
-            <h2>Sobre nosotros</h2>
-            <h3>Informacion de contacto</h3>
-            <span>Parroquia: 2288 1878 Ext 106 | Numero alternativo: 2289 6592 | pastsoc.sapadua.escazu@gmail.com</span>
-            <hr />
-            <p>MISIÓN: La Pastoral Social de San Antonio de Padua-Escazú; de la diócesis de San José, promueve apoya, acompaña y forma, a personas, comunidades por medio de procesos, estrategias y programas sociales, orientados a través de la promoción humana, la acción caritativa y solidaria, la vida, la justicia y la paz; aportando al desarrollo Humano-Cristiano de la Región.</p>
-            <p>VISIÓN: Ser reconocidos por nuestra capacidad de dinamizar, direccionar y transformar la realidad de nuestra región, hacia una cultura del bien común y la solidaridad; donde sus pobladores gozan de vida más digna </p>
-        </div>
-    </div>
+	</div>
+	<!--Pop-up informacion-->
+	<div class="bg-modal2">
+			<div class="modal-content2">
+				<div class="close">+</div>
+				<img src="images/i.png" class="sIcons" alt="">
+				<hr/>
+				<h2>Sobre nosotros</h2>
+				<h3>Informacion de contacto</h3>
+				<span>Parroquia: 2288 1878 Ext 106 | Numero alternativo: 2289 6592 | pastsoc.sapadua.escazu@gmail.com</span>
+				<hr/>
+				<p>MISIÓN:  La Pastoral Social de San Antonio de Padua-Escazú; de la diócesis de San José, promueve apoya, acompaña y forma, a personas, comunidades por medio de    procesos, estrategias y programas sociales,  orientados a través de la promoción humana, la acción caritativa y solidaria, la vida, la justicia y la paz; aportando  al desarrollo Humano-Cristiano de la Región.</p>
+				<p>VISIÓN: Ser reconocidos por nuestra capacidad de dinamizar, direccionar y transformar  la realidad de nuestra región, hacia una cultura del bien común y la solidaridad; donde sus pobladores gozan de  vida más digna </p>
+			</div>
+		</div>
 
     <!--Pop-up para formulario-->
     <div class="bg-modal">
@@ -151,29 +163,62 @@
             <hr />
             <h2>Proporciona tus datos para solicitar ayuda</h2>
             <form id=registration_form action="register.php" method="post">
-                <table>
-                    <tr>
-                        <td><input type="text" class="form_text" placeholder="Nombre" id="form_username"></td>
-                        <td><span class="error_form" id="username_error_message"></span></td>
-                    </tr>
-                    <tr>
-                        <td><input placeholder="Correo electronico" type="text" class="form_text" id="form_email"></td>
-                        <td><span class="error_form" id="email_error_message"></span></td>
-                    </tr>
-                    <tr>
-                        <td><textarea name="razon" id="message" placeholder="¿Por qué necesitas ayuda?" cols="10" rows="5" class="form_text" id="form_razon"></textarea></td>
-                        <td><span class="error_form" id="username_error_message"></span></td>
-                    </tr>
-                    <tr>
-                        <td><input type="submit" class="sbmt_btn" value="Enviar formulario"></td>
-                        <td></td>
-                    </tr>
-                </table>
-            </form>
+					<table>
+					<tr><td><input type="text" class="form_text" placeholder="Nombre" id="form_username"></td><td><span class="error_form" id="username_error_message"></span></td></tr>
+					<tr><td><input placeholder="Correo electronico" type="text" class="form_text" id="form_email"></td><td><span class="error_form" id="email_error_message"></span></td></tr>
+					<tr><td><textarea name="razon" id="message" placeholder="¿Por qué necesitas ayuda?" cols="10" rows="5" class="form_text" id="form_razon"></textarea></td><td><span class="error_form" id="username_error_message"></span></td></tr>
+					<tr><td><input type="submit" class="sbmt_btn" value="Enviar formulario"></td><td></td></tr>
+					</table>
+				</form>
             <hr />
         </div>
 
-    </div>
+	</div>
+	
+	<!--Pop-up de informacion sobre cursos y ayuda social, dicha seccion puede actualizarse con el tiempo segun las actividades cambien como el de manipulacion de alimentos o un curso de computo-->
+	<div class="bg-modal3">
+			<div class="modal-content3">
+				<div class="close">+</div>
+				<img src="images/pry.png" class="sIcons" alt="">
+				<hr/>
+				<h2>Programas sociales</h2>
+				<hr/>
+				<h3>Atención Psicológica</h3>
+				<p>Es por ello que se ha desarrollado el proyecto de atención psicológica, ya que muchas
+				personas no solamente carecen de bienes materiales sino de recursos y bienes
+				emocionales y espirituales, y es tanta responsabilidad de la sociedad como de la Iglesia
+				brindar una respuesta.</p>
+				<p>En esa línea desde que se inició el proceso se ha contado con el aporte de una
+				profesional en el área de psicología que realiza un servicio comunal en el cual no cobra la
+				tarifa estipulada por el Colegio Profesional de Psicólogos de Costa Rica, que plantea que
+				el costo de las sesiones.</p>
+				<p>No obstante, en la comunidad de recibe en el mejor de los casos 15.000 colones para
+				atención individual. Asimismo, por ser coordinada por la Pastoral Social, las personas que
+				no cuentan con los recursos para sufragar dicha inversión no pagan tal suma y la atención
+				es gratuita.</p>
+				<p>De tal forma tanto los beneficiarios directos de la Pastoral Social, así como los feligreses
+				que son beneficiarios indirectos reciben una atención más cómoda.</p>
+				<hr>
+				<h3>Cursos de Manipulación de Alimentos</h3>
+				<p>Aparecida 399 nos dice que todo proceso evangelizador implica la promoción humana y la
+				auténtica liberación, sin la cual no es posible un orden justo de la sociedad. Entendiendo,
+				además que la verdadera promoción humana no puede reducirse a aspectos particulares:
+				“debe ser integral, es decir, promover a todos los hombres y a todo el hombre desde la
+				vida nueva en Cristo que transforma en tal manera que lo hace sujeto de su propio
+				desarrollo”.</p>
+				<p>Tomando en cuenta estas orientaciones de los obispos, se busca el desarrollo de
+				habilidades en las personas de la comunidad, que les brinden herramientas tanto al
+				servicio de la parroquia como en su propio crecimiento. De esa manera, se ha establecido
+				el programa de los cursos de manipulación de alimentos en la parroquia.</p>
+				<p>Tales cursos son impartidos por un profesional en Tecnología de Alimentos, debidamente
+				acreditado ante el Instituto Nacional de Aprendizaje (INA) bajo resolución de consejo
+				0802-3 y registrado ante el Colegio de Ingenieros Químicos y profesionales Afines, que es
+				un feligrés de la comunidad, de una de las familias de más trayectoria en la comunidad.
+				En algunos casos, deben adecuarse a personas adultas mayores, con baja escolaridad o
+				dificultades de aprendizaje y fieles servidoras de la parroquia en los diversos turnos y
+				actividades donde se involucra la preparación y manejo de alimentos.</p>
+			</div>
+		</div>
 
     <!-- Scripts -->
     <script>

@@ -1,4 +1,5 @@
-.bg-modal, .bg-modal2{
+/* fondo que hace el efecto de slideDown */
+.bg-modal, .bg-modal2, .bg-modal3{
     width: 100%;
     height: auto;
     background-color:rgba(0, 0, 0, 0.7);
@@ -10,7 +11,8 @@
     display: none;
 }
 
-.modal-content, .modal-content2{
+/* contenido de los slideDowns */
+.modal-content, .modal-content2, .modal-content3{
     width: 850px;
     height: auto;
     background-color: white;
@@ -22,10 +24,12 @@
     z-index: 1000;
 }
 
+/* para dar tamano a los iconos circulares del menu */
 .sIcons{
     width: 100px;
 }
 
+/* para colocar y rotar el + que actua como x que cierra los desplegables */
 .close{
     position: absolute;
     top: 0;
@@ -35,11 +39,13 @@
     cursor: pointer;
 }
 
+/* ajustes en colocacion del formulario */
 form{
     width: 100%;
     padding-left: 100px;
 }
 
+/* ajustes en colocacion de input y textarea */
 input, textarea{
     width:360px;
     margin-top: 20px;
