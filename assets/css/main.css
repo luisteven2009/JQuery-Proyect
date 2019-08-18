@@ -844,7 +844,9 @@ ul.icons li a {
     text-align: center;
     white-space: nowrap;
 }
-
+#fle{
+    opacity: 0.6;
+}
 
 /* Button */
 
